@@ -1,0 +1,23 @@
+<zk>
+
+	<toolbar mold="panel">
+		<toolbarbutton image="/assets/image/itsolverlogo-88x22.png" />
+		<toolbarbutton id="btnProfile" label="My profile" />
+		<toolbarbutton id="btnConfig" label="Configuration" />
+		<toolbarbutton id="btnLang" label="Language" popup="languagePopup" />
+		<toolbarbutton id="btnChat" label="Chat" />
+		<toolbarbutton id="btnExit" label="Logout" >
+			<attribute name="onClick">
+				session.removeAttribute("currentSession");
+				Executions.sendRedirect("/");
+			</attribute>
+		</toolbarbutton>				
+	</toolbar>
+	
+	<menupopup id="languagePopup">
+		<menuitem id="btnEN" label="English" />
+		<menuitem id="btnES" label="Español" />
+		<menuitem id="btnFR" label="Français" />
+	</menupopup>
+
+</zk>

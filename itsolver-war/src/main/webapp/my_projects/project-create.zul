@@ -1,0 +1,45 @@
+<?page title="Create project" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="winProjectCreate" title="Project create" border="normal" closable="true"  width="500px" 
+	droppable="false" apply="itsolver.controller.projectmgmt.ProjectCreate">
+	<vbox>
+		<label id="lblCreateProj"></label>
+		<label id="lblAddNewProj"></label>
+	</vbox>
+	
+	<grid fixedLayout="true" width="100%">
+		<columns>
+			<column width="150px" />
+			<column />
+		</columns>
+		<rows>
+			<row width="150px">
+				<label id="lblProjName" width="150px" />
+				<textbox id="txtProjectName" value="" width="90%" constraint="no empty"/>
+			</row>
+			<row width="150px">
+				<label id="lblProjType" width="150px" />
+				<vbox>
+					<radiogroup id="rgpProyectType" orient="vertical" >
+						<radio id="radioContradictions" value="CONTRADICTIONS" />
+						<radio id="radioSufield" value="SU-FIELD"/>
+					</radiogroup>
+					<label id="lblProjectTypeRequired"
+						style="color:red;font-size:11px;" visible="false"/>
+				</vbox>	
+			</row>
+			
+		</rows>
+	</grid>
+	<vbox  align="center" width="100%">
+		<hbox>			
+			<button id="btnCreateProject" />
+			<button id="btnCancelCreate" />			
+		</hbox>
+	</vbox>
+	
+</window>
+</zk>
+
+
+

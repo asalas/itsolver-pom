@@ -1,0 +1,31 @@
+<?page title="Algorithm for Use of Standards" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="algorithmStandardsWin" 
+	apply="itsolver.controller.sufield.AlgorithmStandardsController"
+	title="Algorithm for Use of Standards" 
+	border="normal" closable="true" width="800px" height="550px">
+
+	<vbox spacing="5px">
+		<hbox spacing="5px">		
+			<!-- lista dinamica de preguntas -->		
+			<listbox id="questionsListbox" width="500px" height="230px">
+				<listhead sizable="false">			
+					<listheader label="Questions" />
+				</listhead>
+			</listbox>
+	
+			<!-- arbol de estandares de solucion -->
+			<tree id="inventiveStandardsTree" width="270px" height="230px">
+				<treecols>
+					<treecol label="Inventive Standards" />
+				</treecols>
+			</tree>
+		</hbox>
+		
+		<panel id="inventiveStandardPanel" title="Inventive Standard Selected" 
+			border="normal"
+			width="779px" height="275px" />
+	</vbox>
+
+</window>
+</zk>

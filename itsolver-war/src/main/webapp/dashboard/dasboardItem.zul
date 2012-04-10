@@ -1,0 +1,36 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="fg" border="normal">
+		<hbox id="dasboard_item1" >
+			<groupbox id="gb" width="500px">
+				<hbox>
+					<vbox>
+						<image src="../image/sample/mitnick.jpg"/>						
+					</vbox>
+					<vbox>
+						<hbox>
+							<label sclass="dashboard_item_caption" value="User:" />
+							<label value="Keving Mitnick"/>
+						</hbox>						
+						<hbox>
+							<label sclass="dashboard_item_caption" value="Project:"/>
+							<label value="Improving Wi-Fi device on laptops"/>
+						</hbox>						
+						<hbox>
+							<label sclass="dashboard_item_caption" value="Description:" />
+							<label value="Project creation"/>
+						</hbox>
+						<hbox>
+							<label sclass="dashboard_item_caption" value="Updated:" />
+							<label value="Feb 12 2010 17:15" />
+							<button  label="View" onClick="" />
+						</hbox>	
+					</vbox>
+				</hbox>
+			</groupbox>
+		</hbox>
+		<separator sclass="separator_dashboard_simple" />
+		<separator sclass="separator_dashboard" />
+		<separator sclass="separator_dashboard_simple"/>
+	</window>
+</zk>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language-addon>
+    <addon-name>itsolver-components</addon-name>
+    <language-name>xul/html</language-name>
+    <component>
+        <component-name>save-changes-2project</component-name>
+        <component-class>itsolver.components.SaveChanges2Project</component-class>
+        <macro-uri>/components/save_changes_2project.zul</macro-uri>
+    </component>
+    <component>
+        <component-name>notify-collaboration</component-name>
+        <component-class>itsolver.components.NotifyCollaboration</component-class>
+        <macro-uri>/components/notify_collaboration.zul</macro-uri>
+    </component>
+</language-addon>

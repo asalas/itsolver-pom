@@ -1,0 +1,7 @@
+<?page title="Welcome to ItSolver"?>
+<zk>
+
+<style src="/assets/css/style.css" />
+
+<include src="/marketing/layout.zul" />
+</zk>

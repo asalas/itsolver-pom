@@ -1,0 +1,24 @@
+<?page title="Ideal Final Result" contentType="text/html;charset=UTF-8"?>
+<zk>
+<panel id="pnlIFRTitle"
+		width="100%" height="100%" border="normal"
+		apply="itsolver.controller.projectmgmt.IFRForm">
+	<panelchildren >
+		<vbox>
+			<label id="lblStep1" />			
+			<textbox id="txtEliminateDeficiencies" rows="4" width="700px"></textbox>			
+			
+			<label id="lblStep2" />			
+			<textbox id="txtPreserveAdvantages" rows="4" width="700px"></textbox>
+			
+			<label id="lblStep3" />					
+			<textbox id="txtNotIncreaseComplexity" rows="4" width="700px"></textbox>
+			
+			<label id="lblStep4" />					
+			<textbox id="txtNotCreateDisadvantages" rows="4" width="700px"></textbox>
+			
+			<save-changes-2project id="saveChangesIFR" />
+		</vbox>
+	</panelchildren>
+</panel>
+</zk>

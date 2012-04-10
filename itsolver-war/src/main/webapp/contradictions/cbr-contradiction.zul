@@ -1,0 +1,31 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div id="divCBRContradiction"  width="700px"  style="margin-bottom:50px;padding-bottom:100px;"
+	apply="itsolver.controller.contradiction.CBRContradictionController">
+	<vbox id="vboxContainer">
+		
+		<label id="lblTitle" />
+		<button id="btnDoCBRSearch" label="Buscar"/>
+		<separator bar="false" width="100%"/>
+		<separator bar="true" width="100%"/>
+		<grid id="grdCaseList" model="@{caseList}" visible="false">
+			<columns>
+				<column width="4%"/>
+				<column width="4%"/>				
+				<column width="80%">Descripción del proyecto</column>
+				<column width="11%">Similitud</column>
+			</columns>
+			<rows >
+				<row self="@{each=case}">
+					<toolbarbutton image="/assets/image/pdf16x16.gif" href='@{case.urlToPdf}' target="_blank"/>
+					<toolbarbutton image="/assets/image/html-logo-16x16.jpg" href='@{case.urlToHtml}' target="_blank"/>
+					<label value="@{case.project.problemDescription.briefDescription}"/>
+					<label value="@{case.similarityEvaluation}"/>
+				</row>
+			</rows>
+		</grid>
+				
+		<hbox id="htmlContainer"></hbox>		
+	</vbox>
+</div>
+</zk>

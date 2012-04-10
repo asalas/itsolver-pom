@@ -1,0 +1,44 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div id="invitationList" width="100%" 
+		apply="itsolver.controller.collaborationmgmt.CollaborationController">		
+	
+
+	<div id="divInvitationsReceived">		
+		<hbox>
+			<toolbarbutton id="btnAcceptInvitation" 
+							image="/assets/image/accept-icon.png" 
+							disabled="true"/>
+			<toolbarbutton id="btnRejectInvitation" 
+							image="/assets/image/delete-icon.png" 
+							disabled="true" />
+			<toolbarbutton id="btnCollaboration" 
+							image="/assets/image/workgroup-icon.png" 
+							disabled="true" />
+		</hbox>	
+	
+		<separator sclass="separatorHz" 
+					style="margin-bottom: 10px; width: 100%;" />
+		
+		<listbox id="receivedInvitationListBox" mold="paging" pageSize="20"
+				multiple="false" checkmark="true"
+				model="@{invitationListCtrl.receivedInvitationList}"
+				selectedItem="@{invitationListCtrl.selectedReceivedInvitation}">
+			<listhead sizable="true">			
+				<listheader id="headerProject" sort="auto(lower(project.projectName))" />
+				<listheader id="headerSentBy" sort="auto(lower(sendBy.user.userName))" />
+				<listheader id="headerMsg" />
+				<listheader id="headerSendedOn" sort="auto(lower(invitationDate))" />
+				<listheader id="headerCollabStatus" sort="auto(lower(status))" />
+			</listhead>
+			<listitem self="@{each=invitation}">
+				<listcell label="@{invitation.project.projectName,save-when=null}" />
+				<listcell label="@{invitation.sentByProfile.user.userName}" />
+				<listcell label="@{invitation.message}" />
+				<listcell label="@{invitation.invitationDate}" />
+				<listcell label="@{invitation.status}" />
+			</listitem>	
+		</listbox>
+	</div>	
+</div>
+</zk>

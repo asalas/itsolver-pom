@@ -1,0 +1,59 @@
+<zk>
+<style src="/assets/css/style.css" />
+<div width="100%" align="center">
+	<vbox  width="980px" align="center" style="margin-top: 20px;">
+		
+		<include src="/login/login.zul" />
+		
+		<toolbar sclass="toolBarMenu">
+			<toolbarbutton image="/assets/image/itsolverlogo-88x22.png" />
+			<toolbarbutton id="homeToolBarbutton" sclass="toolbar_button" label="Welcome! continue with your signup" />
+		</toolbar>		
+		 
+		<separator orient="vertical" spacing="15px" />
+			
+		
+		<hbox align="center">						
+			
+			<include src="/marketing/signup.zul" />	
+			
+		</hbox>
+		
+		<separator sclass="separatorHz" style="margin-top: 80px;" />
+		
+		<toolbar mold="panel" align="center">			
+			<toolbarbutton label="About">
+				<attribute name="onClick">
+					{
+						final Window win = (Window) Executions.createComponents(
+								"../home/about.zul", null, null);					
+						win.doModal();
+					}
+				</attribute>
+			</toolbarbutton>
+			<separator orient="vertical" bar="true"/>
+			
+			<toolbarbutton label="Terms"/>
+			<separator orient="vertical" bar="true"/>
+			
+			<toolbarbutton label="FAQ"/>
+			<separator orient="vertical" bar="true"/>
+			
+			<toolbarbutton label="Report Abuse"/>
+			<separator orient="vertical" bar="true"/>
+			
+			<toolbarbutton label="Contact us"/>
+			<separator orient="vertical" bar="true"/>
+			
+			<toolbarbutton label="Language" popup="languagePopup"/>					
+		</toolbar>
+		
+		<menupopup id="languagePopup">
+			<menuitem id="menuEN" label="English" />
+			<menuitem id="menuES" label="Español" />
+			<menuitem id="menuFR" label="Français" />			
+		</menupopup>
+		 
+	</vbox>
+</div>
+</zk>

@@ -1,0 +1,119 @@
+<?page title="itsolver" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style src="/assets/css/style.css" />
+
+<borderlayout id="mainLayout" height="100%" style="background:#FFFFFF;" 
+	apply="itsolver.controller.home.Index" visible="false">
+	<north border="0" height="50px"  margins="5,10,10,0" >
+		<borderlayout>
+			<west size="50%" border="none">
+				<div>
+					<separator orient="vertical" height="10px" />
+					<hbox>					
+						<div id="divLogo">
+							<image src="/assets/image/itsolverlogo-88x22.png" />
+						</div>
+						<menubar id="menuConfigBar" height="22px" >
+							<menu id="userMenu" image="/assets/image/configuration-icon-16x16.png">
+								<menupopup>
+									<menuitem id="btnProfile" image="/assets/image/user-icon.png" />
+									<menu id="btnLang" image="/assets/image/language-icon.png">
+										<menupopup>
+											<menuitem id="btnEN" label="English" 
+												image="/assets/image/us-icon.png" />
+											<menuitem id="btnES" label="Español" 
+												image="/assets/image/mex-icon.png" />
+											<menuitem id="btnFR" label="Français" 
+												image="/assets/image/france-icon.png" />
+										</menupopup>
+									</menu>
+									<menuitem id="btnChat" label="Chat" 
+										image="/assets/image/chat-icon.png"/>
+									<menuitem id="btnExit" image="/assets/image/logout-icon.png" />
+								</menupopup>
+							</menu>
+						</menubar>					
+					</hbox>
+				</div>			
+			</west>
+			<center border="none" />
+			<east id="notificationZone" size="50%" border="none" style="padding:10px;">
+				<div>
+					<!-- Timer que deshabilita la zona de notificacion -->
+					<timer id="timerNotifyCollaboration" delay="5000" repeats="false" running="false" />					
+					<notify-collaboration id="notifyCollaboration" visible="false" />
+				</div>
+			</east>
+		</borderlayout>
+	</north>
+	
+	<!-- Content -->
+	<!-- Los margenes son arriba, izquierda, derecha, abajo  -->
+	<center flex="true" border="none" margins="0,10,5,0" style="background:#FFFFFF;">
+		<tabbox width="100%" height="100%" id="tabBoxMenu">
+			<tabs>
+				<tab id="tabDashboard"  closable="false"/>
+				<tab id="tabMyProjects" closable="false"/>
+				<tab id="tabMyCollaborations" closable="false"/>
+				<!-- 
+				<tab id="tabEducational" closable="false"/>
+				 -->
+			</tabs>			
+			<tabpanels id="tabBoxPanels">
+				<!-- NOTA: se puede ocupar todo el espacio de un tab panel si se usa un height fijo y el tabbox tiene un height del 100%  -->
+				<tabpanel id="tabPanelDashboard"></tabpanel>
+				<tabpanel id="tabPanelMyProjects"></tabpanel>
+				<tabpanel id="tabPanelMyCollaborations"></tabpanel>
+				<!-- 
+				<tabpanel id="tabPanelEducational"></tabpanel>
+				 -->
+			</tabpanels>
+		</tabbox>		
+	</center>
+	
+	<south border="0"  margins="0,10,10,0">
+		<div style="width: 100%">	
+		
+		<separator sclass="separatorHz" style="margin-top: 10px;" />
+	
+		<toolbar mold="panel" align="center">			
+			<toolbarbutton label="About">
+				<attribute name="onClick">
+					{
+						final Window win = (Window) Executions.createComponents(
+								"about.zul", null, null);
+						win.doModal();
+					}
+				</attribute>
+			</toolbarbutton>
+			<separator orient="vertical" bar="true"/>
+			
+			<!-- 
+			<toolbarbutton label="Terms"/>
+			<separator orient="vertical" bar="true"/>
+			
+			<toolbarbutton label="FAQ"/>
+			<separator orient="vertical" bar="true"/>
+			
+			<toolbarbutton label="Report Abuse"/>
+			<separator orient="vertical" bar="true"/>
+			 
+			<toolbarbutton label="Contact us"/>
+			<separator orient="vertical" bar="true"/>
+			
+			<toolbarbutton label="Feedback"/>
+			
+			<separator orient="vertical" bar="true"/>
+			-->
+			Powered by
+			<toolbarbutton label="ZK"/>
+		</toolbar>
+		
+		</div>
+	</south>
+
+</borderlayout>
+
+		
+
+</zk>

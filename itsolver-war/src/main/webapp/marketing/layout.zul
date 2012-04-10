@@ -1,0 +1,63 @@
+<zk>
+<style src="/assets/css/style.css" />
+<div id="divMarketingLayout" width="100%" align="center" apply="itsolver.controller.MarketingLayout">
+	<vbox  width="980px" align="center" style="margin-top: 20px;">
+		
+		<toolbar sclass="toolBarMenu">
+			<toolbarbutton image="assets/image/itsolverlogo-88x22.png" />
+			<toolbarbutton id="homeToolBarbutton" sclass="toolbar_button"/>
+			<toolbarbutton id="whatIsToolBarbutton" sclass="toolbar_button"/>
+			<toolbarbutton id="signUpToolBarbutton" sclass="toolbar_button"/>
+		</toolbar>		
+		 
+		<separator orient="vertical" spacing="15px" />			
+		
+		<hbox id="hboxMainLayout" spacing="88px">			
+			<vbox width="420px">				
+				<label id="lblDescription" style="font-size: 100%; font-weight: bold; line-height: 1.55; color: #3399CC;" height="88px" />
+				
+				<vbox style="padding-left: 25px; margin-top: 25px;" spacing="1px">
+					<toolbarbutton id="btnLearnMore" image="assets/image/Bullet-10x10.png" label="Learn more" />
+					<toolbarbutton id="btnResolveProblem" image="assets/image/Bullet-10x10.png" label="Learn more" />
+					<toolbarbutton id="btnCollaboration" image="assets/image/Bullet-10x10.png" label="Learn more" />
+				</vbox>
+			</vbox>
+		</hbox>
+		 
+		<separator sclass="separatorHz" style="margin-top: 60px;" />
+		
+		<toolbar mold="panel" align="center">			
+			<toolbarbutton id="btnAbout" >
+				<attribute name="onClick">
+					{
+						final Window win = (Window) Executions.createComponents(
+								"home/about.zul", null, null);					
+						win.doModal();
+					}
+				</attribute>
+			</toolbarbutton>
+			 
+			<separator orient="vertical" bar="true"/>
+			<!--
+			<toolbarbutton label="Terms"/>
+			<separator orient="vertical" bar="true"/>
+			
+			<toolbarbutton label="FAQ"/>
+			<separator orient="vertical" bar="true"/>			
+			
+			
+			<toolbarbutton label="Contact us"/>
+			<separator orient="vertical" bar="true"/>
+			 -->
+			<toolbarbutton id="btnLang" popup="languagePopup"/>					
+		</toolbar>
+		
+		<menupopup id="languagePopup">
+			<menuitem id="menuEN" label="English" />
+			<menuitem id="menuES" label="Español" />
+			<menuitem id="menuFR" label="Français" />			
+		</menupopup>
+		 
+	</vbox>
+</div>
+</zk>

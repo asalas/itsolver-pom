@@ -1,0 +1,31 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk> 
+<div id="myProjectList" width="100%" 
+		apply="itsolver.controller.projectmgmt.ProjectList">					
+	<hbox>
+		<toolbarbutton id="btnProjectAdd" image="/assets/image/add-icon.png" />
+		<toolbarbutton id="btnProjectEdit" image="/assets/image/edit-icon.png" />
+		<toolbarbutton id="btnProjectInvite" image="/assets/image/workgroup-icon.png" />
+	</hbox>
+		
+	<separator sclass="separatorHz" style="margin-bottom: 10px; width: 100%;" />
+	
+	<listbox id="projectListBox" mold="paging" pageSize="20"				
+			multiple="false" checkmark="true" 
+			model="@{myProjectListCtrl.modelProjectList}"
+			selectedItem="@{myProjectListCtrl.selectedProject}">
+		<listhead sizable="true">			
+			<listheader id="headerName" sort="auto(lower(projectName))" />
+			<listheader id="headerStatus" sort="auto(lower(projectStatus))" />
+			<listheader id="headerType" sort="auto(lower(projectType))" />
+			<listheader id="headerDate" sort="auto(lower(createdOn))" />
+		</listhead>
+		<listitem self="@{each=project}">
+			<listcell label="@{project.projectName}" />
+			<listcell label="@{project.projectStatus}" />
+			<listcell label="@{project.projectType}" />
+			<listcell label="@{project.createdOn}" />
+		</listitem>	
+	</listbox>	
+</div>
+</zk>

@@ -1,0 +1,54 @@
+<?page title="project-resources" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div apply="itsolver.controller.projectmgmt.ProjectResources">
+	<vbox width="100%">
+		<hbox>
+		<div >	
+			<tree id="resourcesTree"   width="400px"  >
+				<treecols>			
+					<treecol width="120px" label="Name" />			
+					<treecol width="120px" label="CategoryId" visible="false"/>
+					<treecol width="120px" label="isCategory" visible="false"/>
+				</treecols>
+			</tree>
+		</div>
+	<vbox align="center">	
+		<grid id="grdEditResource" visible="false" fixedLayout="true" width="100%" >
+			<columns>
+				<column  width="60%"  />
+				<column width="35%"/>
+				<column id="resourceId" visible="false"/>
+			</columns>
+			<rows id="rowsResourceList">			
+			</rows>		
+		</grid>
+		<button id="btnSaveResource" label="Save resource" visible="false"></button>
+	</vbox>
+	</hbox>			
+	<!--  <button label="Search" onClick="grdResult.visible=true"></button> -->
+	
+	<grid id="grdResult" visible="false" width="99.7%">
+		<columns sizable="true">
+			<column label="Name" sort="auto"/>		
+			<column label="Action"/>
+		</columns>
+		<rows>
+			
+			<row>
+				<label value="Creation of faster tennis shoes"/>
+				<hbox spacing="20px">
+					<button label="Ver"></button>					
+				</hbox>
+			</row>
+			<row>
+				<label value="Solving problem on chain supply"/>
+				<hbox spacing="20px">					
+					<button label="Ver"></button>
+				</hbox>	
+			</row>
+		</rows>
+	</grid>	
+	</vbox>
+	<!-- <button id="btnSaveReso" label="Save"></button>-->
+</div>
+</zk>

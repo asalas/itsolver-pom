@@ -1,0 +1,30 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<vbox id="vboxSolutionSuField"
+		apply="itsolver.controller.sufield.SolutionSuFieldController" 
+		width="100%" height="100%">
+	
+		<label id="lblStandard" style="font-weight:bold" />
+		<label id="lblInvStandardNumber" 
+			value="@{vboxSolutionSuField.suFieldProj.inventiveStandard.inventiveStandardNumber}" />
+		<label id="lblInvStandardDesc" 
+			value="@{vboxSolutionSuField.suFieldProj.inventiveStandard.description}" />
+		<image id="imgInvStandard" 
+			src="@{vboxSolutionSuField.suFieldProj.inventiveStandard.imageURL}" />
+		<label id="lblInvStandardImgdesc" 
+			value="@{vboxSolutionSuField.suFieldProj.inventiveStandard.imageDesc}" />
+		
+		<button id="btnAlgorithmUseStandards" />
+		
+		<space width="10px" />
+		
+		<label id="lblHowWasItAdapted" style="font-weight:bold" />
+		<textbox id="txtHowWasItAdapted"
+			value="@{vboxSolutionSuField.solutionSuField.howWasItAdapted}"
+			rows="4" width="95%" />
+		
+		<space width="10px" />
+		
+		<save-changes-2project id="saveSolutionSuField" />	
+	</vbox>
+</zk>

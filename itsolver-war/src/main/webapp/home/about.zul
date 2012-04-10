@@ -1,0 +1,18 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="About" border="normal" closable="true" maximizable="false"> 
+Collaboration on innovation and problem solving never have been so easy.
+
+<separator></separator>
+by
+<separator></separator>
+<separator></separator>
+Dr. Guillermo Cortes Robles
+<separator></separator>
+Ing. Antonino Salas
+<separator></separator>
+Ing. Rene Lopez Flores
+<separator></separator>
+
+</window>
+</zk>

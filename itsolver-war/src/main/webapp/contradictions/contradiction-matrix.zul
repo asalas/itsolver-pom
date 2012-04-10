@@ -1,0 +1,92 @@
+<?page id="contradictionMatrix" title="Contradiction matrix" contentType="text/html;charset=UTF-8"?>
+<zk >
+
+<div id="divContradictionMatrix"  width="700px"  style="margin-bottom:50px;padding-bottom:100px;"
+	apply="itsolver.controller.contradiction.Contradictions">
+	<div style="overflow:auto; height:500px;">
+		<label style="font-size:16px;">Formulation of a Contradiction</label>
+		<panel id="gb" border="normal" width="100%">
+		    <caption label="Formulación de la caracteristica positiva que se mejora" />
+		    <panelchildren >	    	
+			    <vbox width="100%">
+			    	<separator bar="false" width="100%"/>
+			        <hbox>
+						<label value="Categoria"/> 
+						<listbox id="lbxCategoryPositive" rows="1" mold="select">
+							<listitem  label="--Select--" value="NOVALUE" selected="true"/>
+							<listitem  label="Physical" value="PHYSICAL" />
+							<listitem  label="Performance" value="PERFORMANCE" />
+							<listitem  label="Efficiency" value="EFFICIENCY" />
+							<listitem  label="Capacity" value="CAPACITY" />
+							<listitem  label="Manufactoring" value="MANUFACTORING" />
+							<listitem  label="Mesuring" value="MESURING" />							
+						</listbox>
+					</hbox>
+					<separator bar="true" width="100%"/>
+					<hbox>
+						<label value="Caracteristica positiva"/> 
+						<listbox id="lbxPositiveCharacteristic" rows="1" mold="select" >
+							<listitem  label="--Select--" value="NOVALUE" selected="true"/>													
+						</listbox>
+					</hbox>
+					<label visible="true" id="lblPositiveCharacteristicDesc" style="font-style:italic;"/>
+					<separator bar="false" width="100%"/>
+					Descripción de la caracteritica positiva 
+					<textbox id="txtPositiveCharacteristic" rows="2" width="600px"></textbox>
+					<separator bar="false" width="100%"/>			
+			    </vbox>	    
+		    </panelchildren>
+		</panel>
+		<separator bar="false" width="100%"/>
+		<panel id="gb2" border="normal" width="100%">
+		    <caption  label="Formulación de la caracteristica negativa que se reduce, elimina o neutraliza" />
+		     <panelchildren>
+		     	<separator bar="false" width="100%"/>
+		    	<vbox width="100%">
+			        <hbox>
+						<label value="Category"/> 
+						<listbox id="lbxCategoryNegative" rows="1" mold="select">
+							<listitem  label="--Select--" value="NOVALUE" selected="true"/>
+							<listitem  label="Physical" value="PHYSICAL" />
+							<listitem  label="Performance" value="PERFORMANCE" />
+							<listitem  label="Efficiency" value="EFFICIENCY" />
+							<listitem  label="Capacity" value="CAPACITY" />
+							<listitem  label="Manufactoring" value="MANUFACTORING" />
+							<listitem  label="Mesuring" value="MESURING" />							
+						</listbox>
+					</hbox>
+					<separator bar="true" width="100%"/>
+					<hbox>
+						<label value="Caracteristica negativa"/> 
+						<listbox id="lbxNegativeCharacteristic" rows="1" mold="select" >
+							<listitem  label="--Select--" value="NOVALUE" selected="true"/>												
+						</listbox>
+					</hbox>
+					<label visible="true" id="lblNegativeCharacteristicDesc" style="font-style:italic;"/>
+					<separator bar="false" width="100%"/>
+					Descripción de la caracteristica negativa que se reduce, elimina o neutraliza
+					<textbox id="txtNegativeCharacteristic" rows="2" width="600px"></textbox>			
+			    </vbox>
+			    <separator bar="false" width="100%"/>
+		     </panelchildren>
+		</panel>
+		<groupbox id="gb3" mold="3d" width="100%" visible="true">
+		    <caption  label="Lista de principios relacionados" />
+		    <vbox id="vboxPrincipleList" width="100%">		    	
+		    </vbox>
+	    </groupbox>
+	    <groupbox id="gbSeparacion" mold="3d" width="100%" visible="false">
+		    <caption  label="Lista de principios de separación" />
+		    <vbox  width="100%">
+		    	<radio label="Separación de propiedades contradictorias en el tiempo." />
+		    	<radio label="Separación de propiedades contradictorias en el espacio." />
+		    	<radio label="Transformaciones de Sistema (Reordenación de las partes)." />
+		    	<radio label="Transformación de Fase, o transformación físico-química de sustancias." />		    	
+		    </vbox>
+	    </groupbox>
+	    <save-changes-2project id="saveChangesContradiction" />
+    </div>
+	
+</div>
+	
+</zk>

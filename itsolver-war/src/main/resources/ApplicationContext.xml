@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:aop="http://www.springframework.org/schema/aop"	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/tx
+       					http://www.springframework.org/schema/tx/spring-tx.xsd
+       					http://www.springframework.org/schema/aop
+                        http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+       					
+    
+	<!-- Starts data base source configuration for JPA -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:db.properties</value>
+        </property>
+    </bean>
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${db.driver}"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+    </bean>
+     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml" />
+        <property name="persistenceUnitName" value="itsolverJPA" />             
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+        <property name="dataSource" ref="dataSource"/>
+    </bean>    
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+    
+    <!-- Ends data base source configuration for JPA -->
+    
+	<bean id="userService" class="itsolver.service.UserServiceImpl" >
+		<property name="userDAO" ref="userDAO"/>
+	</bean>
+	<bean id="projectMgmtService" class="itsolver.service.ProjectMgmtServiceImpl" >
+		<property name="projectDAO" ref="projectDAO"/>
+		<property name="resourceCategoryDAO" ref="resourceCategoryDAO"/>		
+		<property name="projectResourceDAO" ref="projectResourceDAO"/>
+		<property name="restrictionDAO" ref="restrictionDAO"/>		
+		<property name="characteristicDAO" ref="characteristicDAO"/>
+		<property name="suFieldModelDAO" ref="suFieldModelDAO" />
+		<property name="suFieldGraphDAO" ref="suFieldGraphDAO" />
+		<property name="pictureSolutionDAO" ref="pictureSolutionDAO" />
+	</bean>	
+	<bean id="collaborationMgmtService" class="itsolver.service.CollaborationMgmtServiceImpl" >
+		<property name="dashboardDAO" ref="dashboardDAO"/>
+		<property name="invitationDAO" ref="invitationDAO"/>
+	</bean>
+	<bean id="profileMgmtService" class="itsolver.service.ProfileMgmtServiceImpl" >
+		<property name="profileDAO" ref="profileDAO"/>
+	</bean>
+	<bean id="invitationByEmailService" class="itsolver.service.InvitationByEmailServiceImpl" >
+		<property name="invitationByEmailDAO" ref="invitationByEmailDAO"/>
+	</bean>
+	<bean id="suFieldService" class="itsolver.service.SuFieldServiceImpl">
+		<property name="treeFieldDAO" ref="treeFieldDAO" />
+		<property name="projectDAO" ref="projectDAO"/>
+		<property name="suFieldGraphDAO" ref="suFieldGraphDAO"/>
+		<property name="edgeDAO" ref="edgeDAO"/>
+		<property name="nodeDAO" ref="nodeDAO"/>
+	</bean>
+	<bean id="cbrService" class="itsolver.service.cbr.CbrServiceImpl">
+		<property name="cbrDAO" ref="cbrDAO" />
+	</bean>
+	<bean id="contradictionMatrixService" class="itsolver.service.ContradictionMatrixServiceImpl">
+		<property name="contradictionDAO" ref="contradictionDAO" />
+	</bean>
+	<bean id="algorithmStandardsService" class="itsolver.service.AlgorithmStandardsServiceImpl">
+		<property name="algorithmQuestionDAO" ref="algorithmQuestionDAO" />
+		<property name="inventiveStandardDAO" ref="inventiveStandardDAO" />
+		<property name="inventiveStandardClassDAO" ref="inventiveStandardClassDAO" />
+		<property name="inventiveStandardGroupDAO" ref="inventiveStandardGroupDAO" />
+		<property name="projectDAO" ref="projectDAO"/>
+	</bean>
+	<bean id="userDAO" class="itsolver.model.dao.UserDAOImpl"/>	
+	<bean id="projectDAO" class="itsolver.model.dao.ProjectDAOImpl"/>
+	<bean id="resourceCategoryDAO" class="itsolver.model.dao.ResourceCategoryDAOImpl"/>
+	<bean id="invitationDAO" class="itsolver.model.dao.InvitationDAOImpl"/>
+	<bean id="profileDAO" class="itsolver.model.dao.ProfileDAOImpl"/>	
+	<bean id="projectResourceDAO" class="itsolver.model.dao.ProjectResourceDAOImpl"/>
+	<bean id="invitationByEmailDAO" class="itsolver.model.dao.InvitationByEmailDAOImpl"/>
+	<bean id="restrictionDAO" class="itsolver.model.dao.RestrictionDAOImpl"/>
+	<bean id="characteristicDAO" class="itsolver.model.dao.CharacteristicDAOImpl"/>
+	<bean id="treeFieldDAO" class="itsolver.model.dao.TreeFieldDAOImpl" />
+	<bean id="dashboardDAO" class="itsolver.model.dao.DashboardDAOImpl" />
+	<bean id="contradictionDAO" class="itsolver.model.dao.ContradictionDAOImpl" />
+	<bean id="cbrDAO" class="itsolver.model.dao.CbrDAOImpl" />	
+	<bean id="notificationAspect" class="itsolver.service.aop.NotificationAspect" />
+	<bean id="algorithmQuestionDAO" class="itsolver.model.dao.AlgorithmQuestionDAOImpl" />
+	<bean id="inventiveStandardDAO" class="itsolver.model.dao.InventiveStandardDAOImpl" />
+	<bean id="inventiveStandardClassDAO" class="itsolver.model.dao.InventiveStandardClassDAOImpl"/>
+	<bean id="inventiveStandardGroupDAO" class="itsolver.model.dao.InventiveStandardGroupDAOImpl"/>
+	<bean id="suFieldGraphDAO" class="itsolver.model.dao.SuFieldGraphDAOImpl"/>
+	<bean id="suFieldModelDAO" class="itsolver.model.dao.SuFieldModelDAOImpl"/>
+	<bean id="pictureSolutionDAO" class="itsolver.model.dao.PictureSolutionDAOImpl"/>
+	<bean id="nodeDAO" class="itsolver.model.dao.NodeDAOImpl" />
+	<bean id="edgeDAO" class="itsolver.model.dao.EdgeDAOImpl" />
+	<!--  <bean id="securityAspect" class="dbcreate.SecurityAspect" /> -->	 
+	<aop:aspectj-autoproxy />
+</beans>

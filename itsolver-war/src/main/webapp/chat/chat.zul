@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+chat.zul
+
+{{IS_NOTE
+	Purpose:
+		
+	Description:
+		
+	History:
+		Mon Aug  6 12:35:50     2007, Created by robbiecheng
+}}IS_NOTE
+
+Copyright (C) 2007 Potix Corporation. All Rights Reserved.
+
+{{IS_RIGHT
+}}IS_RIGHT
+-->
+<window id="winChat" title="ItSolver Chat Room"
+		minimizable="true" 
+		width="312px" border="normal" 
+		apply="itsolver.controller.chat.ChatWindow">
+	
+	<div id="dv" visible="false" style="height: 300px; overflow:scroll">
+  		<vbox id="msgBoard"/>
+	</div>
+	<vbox id="input" visible="false"> 
+		<hbox>
+			<textbox id="msg" style="width:240px" />
+			<button id="exit" label="Exit" forward="onExit"/>
+		</hbox>
+	</vbox>
+</window>

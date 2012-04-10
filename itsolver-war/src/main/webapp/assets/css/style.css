@@ -1,0 +1,184 @@
+@CHARSET "UTF-8";
+
+
+.dashboard_title .z-window-embedded-header{ 
+	font-family:Arial;	font-size:14pt; 
+	font-weight:bold; 
+}
+
+.message_describer { 
+	color:graytext; font-family:Arial;
+	font-size:13pt; font-weight:bold;			
+	text-align:center;
+} 
+.message_describer .z-label{
+	font-size:16px; 
+}
+.dashboard_item_caption{
+	font-weight:600;
+	font-size:11px;  
+}		
+.separator_dashboard { 
+	background-color:#7E9442;	height: 2px; 
+	overflow: visible; line-height: 6pt;
+	width:500px;
+}	
+
+.separator_dashboard_simple { 
+	height: 6px; 
+}
+
+/*ESTILOS PARA LAYOUT.ZUL*/
+.z-window-embedded-cnt  {
+	border:1px solid #7EAAC6;
+	margin:0;
+	padding:3px;
+}
+
+.footer {
+	background:#BDE1F7;
+	margin-top: 3px;
+}
+
+/*estilos para todos los botones regulares de la applicacion*/
+.z-button-os {
+	font-family:Verdana,Tahoma,Arial,Helvetica,sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	border: 1px solid #29447E;
+	background-color: #3399DD;
+	color: #FFFFFF;
+	padding: 3px 10px;
+	margin: 0 5px 0 0;
+	-moz-border-radius: 4px 4px 4px 4px;
+}
+
+.label_signin {
+	font-size: 11px;
+}
+/*size de letra checkboxes sign in*/
+.check_signin .z-checkbox-cnt {
+	font-size: 11px;
+}
+
+.textbox_signin {
+	font-size: 13px; 
+	padding: 5px;
+	width: 190px;
+}
+
+/*estilo opcional para toolbarbutton*/
+.toolbar_button .z-toolbarbutton-cnt {
+	font-family: Arial;
+	font-size: 13px;
+	font-weight: bold;
+	color: #0F3B82;		
+	padding: 8px 10px;
+	-moz-border-radius: 4px 4px 4px 4px;
+}
+
+.toolBarMenu {
+	width: 980px; 
+	height: 32px; 
+	border-width: 1px;
+}
+
+/*Estilos para las listas LI*/
+li {
+	margin-top: 2pt;
+	font-family: Tahoma, Arial, serif;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+/*LINK TOOLBARBUTTON*/
+.link {
+	color: #3B5998;	
+}
+
+ul li {
+	list-style: disc outside url("/itsolver/image/Bullet-10x10.png");
+}
+
+/*ESTILO PARA LOS SEPARATORs QUE DIVIDEN HORIZONTALMENTE*/
+
+.separatorHz {
+	height: 1px; 
+	background-color: #CCCCCC; 
+}
+
+/*estilos para las leyendas*/
+.legend {
+	color:#888888;
+	font-size:0.7em;
+	font-style:oblique;
+}
+
+/* ESTILO PARA LA LISTA DE NOTIFICACIONES*/
+div.notifications {
+	align: center;
+	border: 0;
+	/*height:50%;*/
+	margin-left: auto ;
+  	margin-right: auto;
+  	padding-bottom:35px;
+  	overflow:auto;
+  	text-align: center ;
+  	width:500px;	 
+}
+
+fieldset.notification_item {
+	margin-left: auto ;
+  	margin-right: auto ;
+  	text-align: center ;
+  	width: 470px;  	
+}
+
+/*Links underline*/
+.underline_link {
+	text-decoration: underline;
+	color: #3333CC;
+}
+
+/*estilos notificaciones proceso de colaboracion*/
+.notification {
+	background-color: #FFF1A8; 
+	color: #000000;
+	width: 90%;
+}
+
+.notification .z-label {
+	font-size:13px; 
+	font-weight:bold;
+	padding-top: 5px;
+}
+
+/*estilos notificaciones de error proceso de colaboracion*/
+.notification_error {
+	background-color: #FFF1A8; 
+	color :red; 
+	width: 90%;
+}
+
+.notification_error .z-label {
+	font-size:14px; 
+	font-weight:bold;
+}
+
+/*Estilos para la marquesina de la ventana de edicion del proyecto*/
+.marquee {
+	background-color: #3399DD;
+	color: #FFFFFF;	
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.z-menubar-hor	{
+	position : relative;
+	display: block; 
+	padding : 2px 0px; 
+	border-bottom : 0px solid #B1CBD5;
+	background: #FFFFFF repeat-x 0 center;
+}

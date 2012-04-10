@@ -1,0 +1,52 @@
+<?page title="Sign Up" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<zscript>
+<![CDATA[
+    import java.awt.Font;
+]]>
+</zscript>
+
+<window id="winSignUp" border="normal"  width="280px" apply="itsolver.controller.usermanagement.Signup">
+	<caption id="signUpCaption"  image="/assets/image/sign-up-icon.png" style="font-weight: bold; color: #0F3B82;"/>
+	
+	<vbox style="padding-left:5px; padding-bottom:5px;">		
+		<label id="lblUsrName" />
+		<textbox id="txtUserName" width="260px" />
+		
+		<label id="lblName" />
+		<textbox id="txtName" width="260px" />
+		
+		<label id="lblLastName" />
+		<textbox id="txtLastName" width="260px" />
+		
+		<label value="e-mail:" />
+		<textbox id="txtEmail" width="260px" constraint="/.+@.+\.[a-z]+/: Please enter an e-mail address"/>
+		
+		<label id="lblPassword" />
+		<textbox id="txtPassword" type="password" width="260px" />
+		
+		<label id="lblPasswordConfirmation" />
+		<textbox id="txtPasswordConfirmation" type="password" width="260px" />		
+													
+		<bw.captcha id="captcha"  width="125px" height="50px" thickness="0" length="5" >
+			<attribute name="onCreate">
+				<![CDATA[
+					Font font = new Font("Arial",Font.BOLD,25);
+					captcha.setFont(font);
+					captcha.setBgColor(0x5EAE9E);
+					captcha.setFontColor(0x0F3B82);
+					captcha.setFontBgColor(0x55AA55);
+					captcha.setLineColor(0xFFFF00);
+			    ]]>
+		    </attribute>						
+		</bw.captcha>
+		<label id="lblCaptcha" />
+		<textbox id="txtCaptchaValue" constraint="no empty" width="260px"/>		
+		
+		<button id="btnSignup" />		
+							
+	</vbox>
+	
+</window>
+</zk>

@@ -1,0 +1,73 @@
+<?page title="Restrictions" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div id="divRestrictions" 
+		apply="itsolver.controller.projectmgmt.ProjectRestriction" 
+		height="100%">
+	
+	<label id="lblConstraints"/>	
+	<vbox width="100%">
+		<hbox>
+			<label id="lblConstraintCategory" /> 
+			<listbox id="lbxCategory" rows="1" mold="select">
+				<listitem id="litemCategorySelect"  value="NOVALUE" selected="true"/>
+				<listitem id="litemCategoryPhysical" value="PHYSICAL" />
+				<listitem id="litemCategoryPerfomance" value="PERFORMANCE" />
+				<listitem id="litemCategoryEfficiency" value="EFFICIENCY" />
+				<listitem id="litemCategoryCapacity" value="CAPACITY" />
+				<listitem id="litemCategoryManufactoring" value="MANUFACTURING" />
+				<listitem id="litemCategoryMesuring" value="MEASURING" />							
+			</listbox>
+		</hbox>
+		<separator bar="true"/>
+		<hbox id="parameterForm" visible="false">			
+			<label id="lblConstParameter" /> 
+			<listbox id="lbxCharacteritic" rows="1" mold="select">
+				<listitem id="litemConstCharacteristic" value="NOVALUE"  selected="true"/>									
+			</listbox>
+			<label id="lblValueType" width="150px" />
+		
+			<radiogroup id="parameterType"  >
+				<radio id="rbnSingleValue" value="SINGLE_VALUE" selected="true"/>
+				<radio id="rbnTwoValues" value="TWOS_VALUES"/>					
+			</radiogroup>
+							
+		</hbox>
+		<label id="lblParameterRequiredError" style="color:red;" visible="false"/>
+		<vbox id="valuesForm" visible="false">
+			<hbox>	
+				<label id="lblInitialValue" /> 
+				<textbox id="txtInitialValue" /> 
+				<label id="lblConstCondition" />
+				<listbox id="lbxCondition" rows="1" mold="select">
+					<listitem id="litemNoCondition" value="NO_CONDITION" selected="true"/>
+					<listitem id="litemGreaterThan" value="&gt;" />
+					<listitem id="litemLessThan" value="&lt;" />
+					<listitem id="litemEquals" value="==" />
+					<listitem id="litemDifferent" value="&lt;=" />
+				</listbox> 
+				<label id="lblFinalValue" />
+				<textbox id="txtFinalValue"></textbox>
+			</hbox>				
+			<hbox>
+				<label id="lblDescRelated" />
+				<textbox id="txtDescription" rows="3" width="300px"></textbox>
+				<button id="btnAddRestriction"></button>
+			</hbox>				
+		</vbox>
+		<separator bar="true"/>	
+		<hbox height="10px"></hbox>
+		
+		<label id="lblConstraintsAdded" />		
+		<grid id="grdRestrictions" visible="true" fixedLayout="true" width="100%" >
+			<columns>
+				<column  width="70%"  />				
+				<column  width="25%"  />
+			</columns>
+			<rows id="rowsRestrictionsList">			
+			</rows>		
+		</grid>				
+	</vbox>
+	<separator bar="false" height="4%"/>
+	<save-changes-2project id="saveChangesConstraints" /> 
+</div>
+</zk>

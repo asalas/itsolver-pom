@@ -1,0 +1,23 @@
+<popup id="login_popup" width="230px" height="160px" apply="itsolver.controller.usermanagement.Login" >
+	<vbox>		
+		<vbox>
+			<label id="lblUserName" sclass="label_signin" />
+			<textbox id="txtUserName" sclass="textbox_signin" />
+		</vbox>
+		<vbox>
+			<label id="lblPassword" sclass="label_signin" />
+			<textbox id="txtPassword" type="password" sclass="textbox_signin" />
+		</vbox>
+		<hbox >
+			<label id="lblErrorMessage" style="color:red; font-size:11px" visible="false"/>					
+		</hbox>			
+		<vbox align="end" width="100%">
+			<button id="btnSignin" />
+			<checkbox id="ckbRememberMe"  sclass="check_signin" visible="false"/>				
+		</vbox>			
+		<vbox visible="false">
+			<toolbarbutton label="Forgot your password?" href="#" />
+			<toolbarbutton label="Forgot your username?" href="#"/>				
+		</vbox>
+	</vbox>				
+</popup>

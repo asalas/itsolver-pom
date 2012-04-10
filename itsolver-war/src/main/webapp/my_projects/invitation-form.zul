@@ -1,0 +1,80 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="winInvitationForm" border="normal" closable="true"
+	apply="itsolver.controller.projectmgmt.InvitationForm">
+	
+<caption id="capInvForm" image="/assets/image/workgroup-icon.png" />	
+
+<tabbox id="tb" width="600px" mold="accordion-lite">
+	<tabs>
+		<tab id="tabInvByUname" />
+		<tab id="tabInvByEmail" />
+	</tabs>
+	<tabpanels>
+		<tabpanel>
+			<vbox width="100%" height="100%">				
+				<hbox>
+					<label id="lblInvProjName" style="font-weight: bold;" />
+					<!-- NOTA: Se puede acceder explicitamente al objeto arg para obtener argumentos que se hayan pasado al componente -->
+					<label value="${arg.project.projectName}" />
+				</hbox>										
+				
+				<label id="lblInvProjBDesc" style="font-weight: bold;" />
+				<label value="${arg.project.problemDescription.briefDescription}" />				
+				
+				<label id="lblInvCollabs" style="font-weight: bold;" />
+				
+				<listbox id="collaboratorListBox" height="150px"
+							mold="paging" pageSize="5"							
+							selectedItem="@{winInvitationFormCtrl.selectedCollaborator}">
+					<listhead>
+						<listheader id="headerInvUser" label="User" />
+						<listheader id="headerInvFullName" label="Full name" />
+						<listheader label="" />
+					</listhead>					
+				</listbox>
+
+				<label id="lblInvAddPeople" style="font-weight: bold;" tooltip="msg" />
+			
+				<hbox>
+					<combobox id="cmbUsers" autodrop="true" buttonVisible="false"/>
+					<button id="btnAddUser" height="22px" />
+				</hbox>
+								
+				<textbox id="txtUserName" rows="2" width="578px" />
+				<label value="e.g. acastro, gcortes" sclass="legend" />												
+				
+				<label id="lblInvMsg" style="font-weight: bold;" />
+				<textbox id="txtMessageInvitation" rows="4" width="578px" />						
+			
+				<hbox>
+					<button id="btnSendInvitation" />
+					<button id="btnCancelInvitation" />
+				</hbox>			
+			</vbox>			
+		</tabpanel>
+		
+		<tabpanel>
+			<vbox>				
+				<hbox>
+					<label value="e-mail:" style="font-weight: bold;" />
+					<label value="e.g. steve73@gmail.com, anaswan@hotmail.com" sclass="legend" />
+				</hbox>
+				
+				<textbox id="txtEmailAddresses" width="478px" rows="2" />
+				
+				<label id="lblInvCustomEmail" style="font-weight: bold;" />
+				<textbox id="txtCustomEmailMessage" rows="4" width="578px" />
+				
+				<hbox>
+					<button id="btnSendEmail" />
+					<button id="btnCancelEmail" />
+				</hbox>				
+			</vbox>			
+		</tabpanel>
+		
+	</tabpanels>
+</tabbox>
+
+</window>
+</zk>

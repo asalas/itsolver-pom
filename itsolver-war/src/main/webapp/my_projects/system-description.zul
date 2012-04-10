@@ -1,0 +1,46 @@
+<?page id="pagSystemDescription" title="System description" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div apply="itsolver.controller.projectmgmt.SystemDescriptionForm"
+		height="100%">
+	<label id="lblSystemDesc" />		
+	<tabbox id="tbSystemDesc" mold="accordion-lite">
+		<tabs>
+			<tab id="tabSystemComp" />
+			<tab id="tabSuperSystemComp" />
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+				<vbox>
+					<label id="lblSysPowerSrc" style="font-weight: bold;" />
+					<textbox value ="@{project.systemComponents.powerSource}" rows="2" width="554px" />
+					<label id="lblSysEngine" style="font-weight: bold;" />
+					<textbox value ="@{project.systemComponents.engine}"   rows="2" width="554px" />
+					<label id="lblSysTransmission" style="font-weight: bold;" />
+					<textbox value ="@{project.systemComponents.transmition}" rows="2" width="554px" />
+					<label id="lblSysWU" style="font-weight: bold;" />
+					<textbox value ="@{project.systemComponents.workingUnit}" rows="2" width="554px" />
+					<label id="lblSysCtrlUnit" style="font-weight: bold;" />
+					<textbox value ="@{project.systemComponents.controlUnit}" rows="2" width="554px" />
+				</vbox>
+			</tabpanel>
+			<tabpanel>
+				<vbox>
+					<label id="lblSSysPowerSrc" style="font-weight: bold;" />
+					<textbox value ="@{project.superSystemComponents.powerSource}"  rows="2" width="554px" />
+					<label id="lblSSysEngine" style="font-weight: bold;" />
+					<textbox value ="@{project.superSystemComponents.engine}" rows="2" width="554px" />
+					<label id="lblSSysTransmission" style="font-weight: bold;" />
+					<textbox value ="@{project.superSystemComponents.transmition}" rows="2" width="554px" />
+					<label id="lblSSysWU" style="font-weight: bold;" />
+					<textbox value ="@{project.superSystemComponents.workingUnit}" rows="2" width="554px" />
+					<label id="lblSSysCtrlUnit" style="font-weight: bold;" />
+					<textbox value ="@{project.superSystemComponents.controlUnit}" rows="2" width="554px" />
+				</vbox>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+
+	<separator bar="false" height="3%"/>
+	<save-changes-2project id="saveSystemDescription" />
+</div>				
+</zk>

@@ -1,0 +1,27 @@
+<?page title="Required Registration" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<window title="Required authentication" border="normal" closable="false" 
+	apply="itsolver.controller.marketing.RequiredRegistration" >
+<style src="../assets/css/style.css" />
+	<label id="lblRequiredAuthentication" value="Authentication is required" style="color:red;font-size:16px;"/>
+	<vbox>		
+		<vbox>
+			<label id="lblUserName" sclass="label_signin" />
+			<textbox id="txtUserName" sclass="textbox_signin" constraint="no empty"/>
+		</vbox>	
+		
+		<vbox>
+			<label id="lblPassword" sclass="label_signin" />
+			<textbox id="txtPassword" type="password" sclass="textbox_signin" constraint="no empty"/>
+		</vbox>
+		<hbox >
+			<label id="lblErrorMessage" style="color:red; font-size:11px" visible="false"/>					
+		</hbox>
+		<vbox align="end" width="100%">
+			<button id="btnSignin"  label="Login"/>
+			<toolbarbutton label="Not registered yet?" href="/" />
+		</vbox>
+	</vbox>
+</window>
+</zk>

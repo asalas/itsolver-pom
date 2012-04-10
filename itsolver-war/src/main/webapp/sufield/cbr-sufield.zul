@@ -1,0 +1,32 @@
+<?page title="CBR SuField" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div id="divCBRSuField" 
+		apply="itsolver.controller.sufield.CBRSuFieldController"
+		width="100%" height="100%">
+	<vbox width="100%">
+		<label id="lblTitle" />
+		<button id="btnDoCBRSearch" />
+		
+		<grid id="grdCaseList" model="@{caseList}" visible="false" width="99%">
+			<columns>
+				<column width="5%" />
+				<column width="5%" />				
+				<column id="colProjName" sort="auto(lower(project.projectName))" />
+				<column id="colProjDesc" />				 
+				<column id="colSimilarity" width="12%"  sort="auto(lower(similarityEvaluation))" />
+				<column id="colSatisfactionPercent" width="14%" sort="auto(lower(project.projectSolution.satisfactionPercent))" />				
+			</columns>
+			<rows>
+				<row self="@{each=case}">
+					<toolbarbutton image="/assets/image/pdf16x16.gif" href='@{case.urlToPdf}' target="_blank"/>
+					<toolbarbutton image="/assets/image/html-logo-16x16.jpg" href='@{case.urlToHtml}' target="_blank"/>
+					<label value="@{case.project.projectName}"/>
+					<label value="@{case.project.problemDescription.briefDescription}"/>
+					<label value="@{case.similarityEvaluation}"/>
+					<label value="@{case.project.projectSolution.satisfactionPercent}"/>					
+				</row>
+			</rows>
+		</grid>		
+	</vbox>		
+</div>
+</zk>

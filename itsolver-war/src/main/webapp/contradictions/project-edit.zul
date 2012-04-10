@@ -1,0 +1,34 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="winProjectEdit" border="normal" closable="true" height="630px" width="800px" 
+	 droppable="false" apply="itsolver.controller.projectmgmt.ProjectEdit">
+	
+	<vbox width="100%" height="100%" spacing="0px;">
+		<div sclass="marquee">
+			<label id="lblEditWarning" style="font-weight: bold;" />
+		</div>				
+		<tabbox id="tabBoxMenu" orient="horizontal" width="100%" height="574px">
+			<tabs>
+				<tab id="tabProjectDescription" />
+				<tab id="tabSystemDescription" />
+				<tab id="tabProjectResources" />			
+				<tab id="tabRestrictions" />
+				<tab id="tabIFR" />
+				<tab id="tabContradictionMatrix" />			
+				<tab id="tabCBRContradiction" />
+				<tab id="tabProjectSolution" />
+			</tabs>			
+			<tabpanels>
+				<tabpanel id="tpnProjectDescription" />
+				<tabpanel id="tpnSystemDescription" />
+				<tabpanel id="tpnProjectResources" />			
+				<tabpanel id="tpnRestrictions" />
+				<tabpanel id="tpnIFR" />
+				<tabpanel id="tpnContradictionMatrix" />			
+				<tabpanel id="tpnCBRContradiction" />
+				<tabpanel id="tpnProjectSolution" />				
+			</tabpanels>
+		</tabbox>
+	</vbox>
+</window>
+</zk>

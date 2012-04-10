@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>itsolver-pom</artifactId>
+    <groupId>itsolver</groupId>
+    <version>1.0</version>
+    <relativePath>..</relativePath>
+  </parent>
+  <artifactId>itsolver-pres</artifactId>
+  <name>itsolver-pres</name>
+  <description>Presentation Layer, controllers for MVC pattern design</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>itsolver</groupId>
+  		<artifactId>itsolver-service</artifactId>
+  		<version>1.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>itsolver</groupId>
+  		<artifactId>itsolver-model</artifactId>
+  		<version>1.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>itsolver</groupId>
+  		<artifactId>itsolver-common</artifactId>
+  		<version>1.0</version>
+  	</dependency>
+  </dependencies>
+</project>

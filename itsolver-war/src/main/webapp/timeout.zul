@@ -1,0 +1,7 @@
+<window width="80%" title="Session Timeout" border="normal"
+	apply="itsolver.controller.timeout.TimeOutController">
+	<timer id="timeOut" delay="5000" repeats="false" />
+	<vbox>
+		Your session has ended, redirecting to the home page
+	</vbox>
+</window>

@@ -1,0 +1,9 @@
+<?page title="SuField Diagram Tool" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<div id="divDiagramTool" apply="itsolver.controller.sufield.DiagramToolController">		
+	<!-- Se embebe en codigo HTML la herramienta de diagramas -->
+	  
+	<html id="flexDiagramToolHTML" />	
+</div>
+</zk>

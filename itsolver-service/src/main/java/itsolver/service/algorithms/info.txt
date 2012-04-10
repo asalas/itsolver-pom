@@ -1,0 +1,14 @@
+
+
+	Dureza		Ferromagnetica		Presion		ColocacionInterna		ProgramacionSecuencia		Caso
+	3                    si          40                   si                    si                   c1    
+	4                    si          50                   si                    no                   c2     
+	3                    no          40                   si                    si                   c3     
+	5                    si          80                   no                    si                   c4     
+	4                    no          50                   si                    si                   c5     
+	4                    no          50                   si                    si             		 c6
+	4                    si          40                   si                    si	             	 c7
+	3                    si          40                   no                    si   				 c8
+	
+
+

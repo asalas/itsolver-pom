@@ -1,0 +1,15 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+<div width="100%">
+	<timer id="timerNotification" delay="1500" repeats="false" running="false" />
+	<hbox>		
+		<toolbarbutton id="btnSaveChanges" image="/assets/image/ok-icon.png" tooltiptext="Ok" />
+		<toolbarbutton id="btnCancel" image="/assets/image/cancel-icon.png" tooltiptext="Close" />
+		<vbox id="vboxNotification" sclass="notification" 
+				align="center" width="400px" height="25px" 
+				visible="false">			
+			<label id="lblSaveMsg" value="${arg.saveMsg}" />
+		</vbox>
+	</hbox>
+</div>
+</zk>

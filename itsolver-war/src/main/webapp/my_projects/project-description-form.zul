@@ -1,0 +1,56 @@
+<?page id="problemDescription" title="Problem description" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div id="projectDescription" 
+		apply="itsolver.controller.projectmgmt.ProjectDescriptionController" 
+		height="100%">
+	<grid fixedLayout="true" width="99%">
+		<columns>
+			<column  width="150px" />
+			<column />
+		</columns>
+		<rows>
+			<row  width="150px">
+				<label id="lblProyectName" value="Project name" width="150px" />
+				<label id="lblProjectName" width="90%" style="font-weight:bolder;" />
+			</row>
+			<row  width="150px">
+				<label id="lblProjectNature" value="Project nature" width="150px" />
+				<vbox>
+					<radiogroup  id="problemNature" orient="vertical" >
+						<radio id ="lblEliminateFunction" label="Eliminate harmful function" value="ELIMINATE_HARMFUL_FUNCTION" />
+						<radio id="lblAddNewFunction" label="Add new function" value="ADD_NEW_FUNCTION"/>
+						<radio id ="lblCostReduction" label="Cost reduction" value="COST_REDUCTION"/>
+						<radio id ="lblImprovePerformance" label="Improve performance"  value="IMPROVE_PERFORMANCE"/>
+					</radiogroup>
+				</vbox>
+			</row>
+			<row  width="150px">
+				<label id="lblEstimatedRelase" value="Estimated relase" width="150px" />
+				<datebox id="dbEstimatedRelase" width="150px"  constraint="no past" readonly="true"/>
+			</row>
+			<row>
+				<label id="lblBriefDesc" value="Brief project description:"/> 
+				<hbox>
+					<textbox id="txtBriefDescription"  width="400px" maxlength="200" />
+				</hbox>
+			</row>		
+			<row>
+				<label id="lblProblemSituation" value="Problem situation:"/>				
+				<hbox>
+					<textbox id="txtLongDescription" rows="4" width="400px">
+						
+					</textbox>				
+				</hbox>
+			</row>
+			<row>
+				<label id="lblImprovementDrawback" value="Improvement/drawback to eliminate:"/>				
+				<hbox>
+					<textbox id="txtImprovementDrawback" rows="4" width="400px"/>				
+				</hbox>
+			</row>			
+		</rows>		
+	</grid>
+	<separator bar="false" height="3%"/>
+	<save-changes-2project id="saveChangesDescription" />
+</div>
+</zk>

@@ -1,0 +1,105 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<zk>
+<div id="divProjectSolution"  width="100%" height="100%" style="margin-bottom:50px;padding-bottom:100px;"
+	apply="itsolver.controller.projectmgmt.ProjectSolutionController">	
+	<tabbox id="tabMenu" orient="vertical" width="100%" height="100%">
+		<tabs width="160px" >
+			<tab id="tabProbSituation" />
+			<tab id="tabContradictionSolution" visible="false"/>
+			<tab id="tabSufieldSolution" visible="false"/>
+			<tab id="tabImplementationSolution"/>
+			<tab id="tabDetails" />
+			<tab id="tabConfirmsolution"/>
+		</tabs>
+		<tabpanels width="605px">
+			<tabpanel>
+				<grid fixedLayout="true" width="100%" >
+				<columns>
+					<column  width="150px" />
+					<column />
+				</columns>
+				<rows>
+					<row  width="150px">
+						<label id="lblProjectName" width="150px" />
+						<label id="lblProjName" value="@{divProjectSolution.project.projectName}"/>
+					</row>
+					<row  width="150px">
+						<label id="lblProjNature" width="150px" />
+						<label value="@{divProjectSolution.project.problemDescription.problemNature}"/>
+					</row>
+					<row  width="150px">
+						<label id="lblEstimatedRelease" width="150px" />
+						<label value="@{divProjectSolution.project.problemDescription.estimatedRelase}" />
+					</row>							
+					<row>
+						<label id="lblProbSituation" />
+						<label value="@{divProjectSolution.project.problemDescription.longDescription}" />
+					</row>
+					<row>
+						<label id="lblImprovement" />
+						<label value="@{divProjectSolution.project.problemDescription.improvementDrawback}" />
+					</row>			
+				</rows>
+				
+			</grid>
+			</tabpanel>
+			<tabpanel id="tpnSolutionContradiction"/>
+			<tabpanel id="tpnSolutionSuField"/>
+			<tabpanel id="tpnSolutionImplementation"/>
+			<tabpanel>
+				<label id="lblDetailsSolution" /> 
+				<grid  fixedLayout="true" width="100%" >
+					<columns>
+						<column  width="150px" />
+						<column />
+					</columns>
+					<rows>
+						<row  width="100%">
+							<label id="lblComments" />
+							<textbox rows="2" width="95%" value="@{divProjectSolution.project.projectSolution.commentsInSolution}"/>
+						</row>
+						<row>
+							<label id="lblProbWithSolution" />
+							<textbox rows="2" width="95%" value="@{divProjectSolution.project.projectSolution.problemWithSolution}"/>
+						</row>
+						<row >
+							<label id="lblInfoSources" />
+							<textbox rows="2" width="95%"  value="@{divProjectSolution.project.projectSolution.informationSources}"/>
+						</row>
+						<row>
+							<label id="lblAlternativeSol" />
+							<textbox rows="2" width="95%" value="@{divProjectSolution.project.projectSolution.alternativeSolution}"/>
+						</row>
+						<row >
+							<label id="lblExpertContact" />
+							<textbox rows="2"  width="95%" value="@{divProjectSolution.project.projectSolution.expertContactDetail}"/>
+						</row>
+					</rows>					
+				</grid>
+				<save-changes-2project id="saveSolutionDetails" />
+			</tabpanel>
+			<tabpanel id="tpnConfirmSolution">
+				<label id="lblConfirmSolution" />				
+				<separator bar="false" width="100%"/>
+				<separator bar="true" width="100%"/>
+				<vbox>
+					<hbox>
+						<label id="lblSolutionSatisfaction" />
+						<listbox id="lbxSolutionSatisfaction" rows="1" mold="select">
+							<listitem  label="--Select--" value="NOVALUE" selected="true"/>
+							<listitem  label="25%" value="25" />
+							<listitem  label="50%" value="50" />
+							<listitem  label="75%" value="75" />
+							<listitem  label="100%" value="100" />
+						</listbox>						
+						<separator bar="true" width="100%"/>
+					</hbox>
+					<separator bar="false" width="100%"/>
+					<separator bar="true" width="100%"/>					
+					<save-changes-2project id="saveConfirmSolution" />					
+				</vbox>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>	
+</div>
+</zk>

@@ -1,0 +1,21 @@
+<?page title="Dashborad" contentType="text/html;charset=UTF-8"?>
+<zk>	
+	<div id="divDashboard" style="overflow:auto" height="500px" apply="itsolver.controller.collaborationmgmt.DashboardController">	
+	<vbox width="100%" height="100%" align="center">
+ 		
+ 		<hbox width="70%" align="center">
+			<label id="msgDashboard" sclass="message_describer" />
+		</hbox>
+		
+		<separator />
+		<vbox  align="end" width="525px">			
+			<toolbarbutton id="btnLatestUpdates" sclass="link" />
+		</vbox>
+		
+		<separator sclass="separator_dashboard_simple" />		
+		
+		<listbox id="lbxNotifications"  sclass="notifications" />        
+	
+	</vbox>
+	</div>
+</zk>

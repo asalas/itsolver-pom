@@ -1,0 +1,34 @@
+<zk>
+	<div id="divSolutionContradiction" 
+		style="margin-bottom:50px;padding-bottom:100px;"
+		apply="itsolver.controller.contradiction.SolutionContradictionController">		
+		<vbox>
+			<grid  fixedLayout="true" width="100%" >
+					<columns>
+						<column  width="130px"  align="right"/>
+						<column />
+					</columns>
+					<rows>
+						<row >
+							<label value="Principle"/>
+							<vbox width="100%">
+								<radiogroup id="rgpPrincipleList" orient="vertical"/>
+								<!--  <button>Other</button> -->
+						    	<vbox id="vBoxSubPrincipleList"/>
+						    </vbox>
+						</row>
+						<row>
+							<label>How was It adapted</label>
+							<textbox rows="2" width="95%" value="@{divSolutionContradiction.solutionContradiction.howWasItAdapted}"/>
+						</row>						
+					</rows>
+				</grid>
+		</vbox>
+		 <!--  <popup id="mesagePoppup" width="400px">
+	        <html></html>
+	    </popup> 
+	    -->
+		<save-changes-2project id="saveSolutionContradiction" />
+
+	</div>
+</zk>

@@ -1,0 +1,75 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div id="divSolutionImplementation"  height="500px"
+		style="margin-bottom:50px;padding-bottom:100px;"
+		apply="itsolver.controller.projectmgmt.SolutionImplementation">
+		<vbox>
+			<tabbox id="tabBoxImplementation" orient="horizontal">
+				<tabs>
+					<tab id="tabSolutionResource"/>
+					<tab id="tabSolutionConstraints"/>
+					<!-- 
+					<tab label="IFR" id="tabSolutionIFR"/>
+					 -->
+					<tab id="tabSolutionPictures"/>
+				</tabs>
+				<tabpanels>
+					<tabpanel>
+						<grid fixedLayout="true" width="100%">
+							<columns>
+								<column width="150px" />
+								<column />
+							</columns>
+							<rows>
+								<row width="150px">
+									<label id="lblSelectedResources" width="150px" />
+									<vbox id="vBoxResourceList" width="100%"/>
+								</row>
+								<row>
+									<label id="lblHowWereTheyUsed" />
+									<textbox rows="2" width="400px"></textbox>
+								</row>
+							</rows>
+						</grid>
+					</tabpanel>
+					<tabpanel>
+						<vbox>
+							<label id="lblConstraints" />
+							<label id="lblSelectConstraints" />
+							<grid id="grdRestrictions" visible="true" fixedLayout="true" width="100%" >
+								<columns>
+									<column  width="5%"  />
+									<column  width="90%"  />
+								</columns>
+								<rows id="rowsRestrictionsList">			
+								</rows>		
+							</grid>
+						</vbox>
+					</tabpanel>
+					<!-- 
+					<tabpanel>
+						<vbox>
+							<label>IFR</label>
+							<label>How close are to IFR</label>
+							<textbox rows="2" width="450px"></textbox>
+						</vbox>
+					</tabpanel>
+					 -->
+					<tabpanel>
+						<hbox>
+							<button id="btnUpload" upload="true,maxsize=1024" />
+						</hbox>
+						<separator />
+						<div id="hbPics" width="580px" height="150px"
+							style="border:1px solid #B0B0B0; overflow:auto;" />
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+		</vbox>
+
+		<save-changes-2project id="saveSolutionImplementation" />
+		
+		<window id="winImg" border="normal"  visible="false">
+		</window>
+	</div>
+</zk>

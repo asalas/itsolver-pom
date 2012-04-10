@@ -1,0 +1,13 @@
+<?page title="Warning" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="winNotification" title="Warning" border="normal">
+	<vbox align="center">
+		<label id="lblMsg" value="This invitation has been accepted" />
+		<button id="btnClose" label="Accept">
+			<attribute name="onClick">
+				Executions.sendRedirect("/");
+			</attribute>
+		</button>
+	</vbox>
+</window>
+</zk>
