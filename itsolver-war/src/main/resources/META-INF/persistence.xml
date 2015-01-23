@@ -3,15 +3,18 @@
 	<persistence-unit name="itsolverJPA" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>		           
 		<properties>
-			<property name="hibernate.archive.autodetection" value="class"/>
-			<property name="dialect" value="org.hibernate.dialect.MySQLDialect"/>
+			<!-- 
 			<property name="hibernate.connection.url" value="jdbc:mysql://localhost/itsolver"/>
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>			
 			<property name="hibernate.connection.username" value="admin_itsolver"/>
 			<property name="hibernate.connection.password" value="innovasolver_pass"/>
+			 -->			
+			<property name="hibernate.archive.autodetection" value="class"/>
+			<property name="dialect" value="org.hibernate.dialect.MySQLDialect"/>			
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
 			<property name="hibernate.show_sql" value="true"/>
-			<property name="hibernate.format_sql" value="true"/>			
+			<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.use_sql_comments" value="true" />			
 		</properties>
 	</persistence-unit>	
 </persistence>

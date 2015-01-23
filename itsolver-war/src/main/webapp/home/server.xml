@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <server>
-	http://localhost:8080/itsolver-war/servicescxf/sufield?wsdl
+	http://itsolver-asalas.rhcloud.com/servicescxf/sufield?wsdl
 </server>
