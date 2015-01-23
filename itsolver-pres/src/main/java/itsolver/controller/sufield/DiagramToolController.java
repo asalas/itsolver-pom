@@ -36,10 +36,10 @@ public class DiagramToolController extends GenericZkComposer {
 			standardNumber = inventiveStandard.getInventiveStandardNumber();
 		}	
 		
-		flexDiagramToolHTML.setContent("<script type='text/javascript' src='/itsolver-asalas.rhcloud.com/sufield/flex-resources/swfobject.js'></script>"+
+		flexDiagramToolHTML.setContent("<script type='text/javascript' src='/sufield/flex-resources/swfobject.js'></script>"+
 							"<script type='text/javascript'>"+
 							    "var swfVersionStr = '10.0.0';"+
-							    "var xiSwfUrlStr = '/itsolver-asalas.rhcloud.com/sufield/flex-resources/playerProductInstall.swf';"+
+							    "var xiSwfUrlStr = '/sufield/flex-resources/playerProductInstall.swf';"+
 							    "var flashvars = {};"+
 								"flashvars.projId = "+projId+";"+
 								"flashvars.standardNumber ='"+standardNumber+"';"+
@@ -53,7 +53,7 @@ public class DiagramToolController extends GenericZkComposer {
 							    "attributes.name = 'DiagramToolSuField';"+
 							    "attributes.align = 'middle';"+
 							    "swfobject.embedSWF("+
-							        "'/itsolver-asalas.rhcloud.com/sufield/flex-resources/DiagramToolSuField.swf', 'flashContent',"+ 
+							        "'/sufield/flex-resources/DiagramToolSuField.swf', 'flashContent',"+ 
 							        "'770', '525',"+ 
 							        "swfVersionStr, xiSwfUrlStr,"+ 
 							        "flashvars, params, attributes);"+	
