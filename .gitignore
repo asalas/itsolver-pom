@@ -6,3 +6,4 @@ target
 !.settings/.jsdtscope
 .project
 .classpath
+.openshift
